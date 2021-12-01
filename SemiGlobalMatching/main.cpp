@@ -8,11 +8,11 @@ using namespace std::chrono;
 
 // opencv library
 #include <opencv2/opencv.hpp>
-#ifdef _DEBUG
-#pragma comment(lib,"opencv_world310d.lib")
-#else
-#pragma comment(lib,"opencv_world310.lib")
-#endif
+// #ifdef _DEBUG
+// #pragma comment(lib,"opencv_world310d.lib")
+// #else
+// #pragma comment(lib,"opencv_world310.lib")
+// #endif
 
 /**
  * \brief
@@ -146,15 +146,14 @@ int main(int argv, char** argc)
         }
     }
 
-    cv::imshow("ÊÓ²îÍ¼", disp_mat);
+    cv::imshow("disparity map", disp_mat);
     cv::Mat disp_color;
     applyColorMap(disp_mat, disp_color, cv::COLORMAP_JET);
-    cv::imshow("ÊÓ²îÍ¼-Î±²Ê", disp_color);
+    cv::imshow("disparity map-false color", disp_color);
 
     // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     std::string disp_map_path = argc[1]; disp_map_path += ".d.png";
     std::string disp_color_map_path = argc[1]; disp_color_map_path += ".c.png";
-    std::cout << disp_map_path;
     cv::imwrite(disp_map_path, disp_mat);
     cv::imwrite(disp_color_map_path, disp_color);
 
