@@ -1,3 +1,7 @@
+/* -*-c++-*- SemiGlobalMatching - Copyright (C) 2020.
+* Author	: Yingsong Li(Ethan Li) <ethan.li.whu@gmail.com>
+* Describe	: main
+*/
 #include "SemiGlobalMatching.h"
 #include <chrono>
 using namespace std::chrono;
